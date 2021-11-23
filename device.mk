@@ -10,6 +10,13 @@ PRODUCT_COPY_FILES += \
 
 $(call inherit-product, vendor/asus/sake/sake-vendor.mk)
 
+# AsusParts
+PRODUCT_PACKAGES += \
+    AsusParts
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/privapp-permissions-asusparts.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-asusparts.xml
+
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 

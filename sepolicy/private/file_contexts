@@ -1,0 +1,3 @@
+# Gestures
+/proc/driver/glove                              u:object_r:sysfs_gesture:s0
+/proc/driver/swipeup                            u:object_r:sysfs_gesture:s0
