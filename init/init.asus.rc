@@ -87,6 +87,33 @@ on property:sys.boot_completed=1
     # Power
     write /sys/class/asuslib/boot_completed 1
 
+# ASUS_BSP camera+++
+on property:vendor.camera.set.apk.usingname=*
+	setprop vendor.camera.apk.usingname   ${vendor.camera.set.apk.usingname}
+
+on property:vendor.camera.set.apk.activity=*
+	setprop vendor.camera.apk.activity   ${vendor.camera.set.apk.activity}
+
+on property:vendor.asus.dis_flash_light=1
+	write /proc/driver/asus_flash "2 1"
+
+on property:vendor.asus.dis_flash_light=0
+	write /proc/driver/asus_flash "2 0"
+
+on property:sys.boot_completed=1
+    chmod 0666 /mnt/vendor/persist/MediaFlag
+    chown shell shell /mnt/vendor/persist/MediaFlag
+
+on property:sys.boot_completed=1
+   chmod 0777 /data/vendor/camera/
+   chmod 644 /vendor/factory/dualcam_cali.bin	
+   copy /vendor/factory/dualcam_cali.bin /data/vendor/camera/dualcam_cali.bin
+   chmod 0755 /data/vendor/camera/dualcam_cali.bin
+
+   copy /proc/driver/dualcam_cali /data/vendor/camera/dualcam_cali	
+   chmod 0755 /data/vendor/camera/dualcam_cali
+# ASUS_BSP camera---
+
 on property:vendor.asus.virtualtherm=*
     # Thermal
     write /sys/class/asuslib/virtual_thermal ${vendor.asus.virtualtherm}

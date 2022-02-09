@@ -1,6 +1,10 @@
 # Bluetooth
 persist.vendor.bt.a2dp.aac_whitelist=false
 
+# Camera
+vendor.camera.aux.packagelist=org.omnirom.snap,com.googlecamera.wichaya,com.asus.camera
+persist.vendor.camera.privapp.list=com.asus.camera
+
 # CNE
 persist.vendor.cne.feature=1
 
