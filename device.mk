@@ -154,8 +154,7 @@ PRODUCT_PACKAGES += \
     android.hardware.lights-service.qti \
     libdisplayconfig.qti \
     libtinyxml \
-    lights.qcom \
-    vendor.lineage.livedisplay@2.0-service-sdm
+    lights.qcom
 
 # Fastboot
 PRODUCT_PACKAGES += \
@@ -266,7 +265,6 @@ PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3.vendor
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
@@ -278,8 +276,6 @@ PRODUCT_PACKAGES += \
     WifiResCommon \
     WifiResTarget \
     ZenFone8Frameworks \
-    ZenFone8LineageSDK \
-    ZenFone8LineageSystemUI \
     ZenFone8Settings \
     ZenFone8SettingsProvider \
     ZenFone8SystemUI \
@@ -295,7 +291,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti
+    android.hardware.power-service
 
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
@@ -319,9 +315,6 @@ PRODUCT_PACKAGES += \
 # Security
 BOOT_SECURITY_PATCH := 2021-11-05
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
-
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
 
 # Sensors
 PRODUCT_COPY_FILES += \
@@ -380,10 +373,6 @@ PRODUCT_BOOT_JARS += \
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0-service.qti
-
-# Touch
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.sake
 
 # TrustedUI
 PRODUCT_PACKAGES += \
